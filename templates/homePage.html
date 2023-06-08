@@ -9,47 +9,49 @@
         <title>大学生就业</title>
     </head>
   <body>
-    <h1>数据列表</h1>
-    <div>
-        <div class="navigation">
-            <ul class="nav">
-                <li><a href="http://127.0.0.1:8000/">首页</a></li>
-                <li><a href="http://127.0.0.1:8000/classification/">分析</a></li>
-                <li class="last"><a href="http://127.0.0.1:8000/questionAnswer/">问答</a></li>
-            </ul>
-        </div>
-        <table id="moview-result-list-table" border="1" cellspacing="1" cellpadding="1" >
-            <tr>
-                <th class="question" >问题</th>
-                <th>答案</th>
-            </tr>
-            {% for data in data_list %}
-                <tr>
-                    <td>{{data.data_question}}</td>
-                    <td>{{data.data_context}}</td>
-                </tr>
-            {% endfor %}
-
-        </table>
-        <ul class="pagination">
-            {% if page_object.has_previous %}
-                <li>
-                <a href="?page={{ page_object.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                </li>
-            {% endif %}
-
-           {% for pg in page_object.paginator.page_range %}
-            {% if page_object.number == pg %}
-            <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
-            {% else %}
-            <li><a href="?page={{ pg }}">{{ pg }}</a></li>
-            {% endif %}
-            {% endfor %}
-            {% if page_object.has_next %}
-                <li>
-                    <a href="?page={{ page_object.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-            {% endif %}
+    <div class="navigation">
+        <ul class="nav">
+            <li class="active"><a href="http://127.0.0.1:8000/">首页</a></li>
+            <li><a href="http://127.0.0.1:8000/classification/">分析</a></li>
+            <li class="last"><a href="http://127.0.0.1:8000/questionAnswer/">问答</a></li>
         </ul>
     </div>
+    <div class="transbox">
+        <div>
+            <table id="moview-result-list-table" border="1" cellspacing="1" cellpadding="1" >
+                <tr>
+                    <th class="question" >问题</th>
+                    <th>答案</th>
+                </tr>
+                {% for data in data_list %}
+                    <tr>
+                        <td>{{data.data_question}}</td>
+                        <td>{{data.data_context}}</td>
+                    </tr>
+                {% endfor %}
+    
+            </table>
+            <ul class="pagination">
+                {% if page_object.has_previous %}
+                    <li>
+                    <a href="?page={{ page_object.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                    </li>
+                {% endif %}
+    
+               {% for pg in page_object.paginator.page_range %}
+                {% if page_object.number == pg %}
+                <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
+                {% else %}
+                <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if page_object.has_next %}
+                    <li>
+                        <a href="?page={{ page_object.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    
   </body>  
 </html>
