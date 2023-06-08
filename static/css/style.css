@@ -1,51 +1,65 @@
 body{
     color: #000000;
-    background:whitesmoke;
+    background:rgb(189, 224, 253);
     background-image: url("../images/svg.png");
     background-repeat: no-repeat;
-    padding: 0 5em;
+    padding: 0 0em;
     margin: 0;
-}
-h1{
-    padding: 2em 1em;
-    background: rgb(73, 179, 255);
-    color: #fff;
 }
 p{
     margin: 1em 0;
 }
+.header{
+    width: 100%;
+    height: 100%;
+}
 .transbox{
     margin: 0px;
+    width: 80%;
     background-color: #fff;
     border: 1px solid black;
     opacity: 0.9;
+    margin-left: 120px;
+    
+}
+.nav{
+    margin: 0%;
+    height: 60px;
+    display: flex;
+    justify-content:center;
 }
 ul{
     list-style: none;
-    margin-bottom: 10px;
     padding: 0px;
     overflow: hidden;
-    background-color: #f2f3f7;
+    
 }
 li{
+    padding-top: 5px;
     float: left;
     width: 100px;
+    margin-right:50px ;
+
 }
 li a{
     display: block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 18px;
     color: #000;
     text-decoration: none;
-    margin: 0 3px;
+    
 }
 .active{
-    background-color: #adadad;
-    color: white;
+    background-color: #ffffff;
 }
 li a:hover:not(.active){
-    background-color: #555;
+    background-color: #272727;
     color: white;
+}
+ul.pagination{
+    display: flex;
+    justify-content: center;
+
 }
 ul.pagination li a{
     transition: background-color .3s;
