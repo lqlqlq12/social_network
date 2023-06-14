@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^$',views.homePage,name='homePage'),
     url(r'^questionAnswer', views.questionAnswer),
     url(r'^classification', views.classification),
+    url(r'^sentiment', views.sentiment),
 ]
 urlpatterns += staticfiles_urlpatterns()

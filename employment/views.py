@@ -31,3 +31,5 @@ def questionAnswer(request):
 def classification(request):
     return render(request,'classification.html')
 
+def sentiment(request):
+    return render(request,'sentiment.html')

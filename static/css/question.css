@@ -13,15 +13,6 @@ p{
     width: 100%;
     height: 100%;
 }
-.transbox{
-    margin: 0px;
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid black;
-    opacity: 0.9;
-    margin-left: 120px;
-    
-}
 .nav{
     margin: 0%;
     height: 60px;
@@ -56,20 +47,8 @@ li a:hover:not(.active){
     background-color: #272727;
     color: white;
 }
-ul.pagination{
-    display: flex;
-    justify-content: center;
-
-}
-ul.pagination li a{
-    transition: background-color .3s;
-
-}
 th{
     padding: 25px;
-}
-.question{
-    width: 200px;
 }
 .container{
     width: calc(50% - 40px) ;
@@ -83,6 +62,7 @@ th{
     overflow-y: scroll;
     flex: 1;
     background-color: rgb(215, 235, 250);
+    border-top-left-radius: 25px;
     box-shadow:
     12.9px 8.5px 2.6px rgba(0, 0, 0, 0.017),
     24.6px 16.3px 5.5px rgba(0, 0, 0, 0.024),
@@ -94,7 +74,6 @@ th{
     112px 74.2px 45px rgba(0, 0, 0, 0.053),
     147.9px 97.9px 67.6px rgba(0, 0, 0, 0.062),
     228px 151px 119px rgba(0, 0, 0, 0.08);
-    border-top-left-radius: 25px;
 }
 .content:hover::-webkit-scrollbar-thumb{
     background:rgba(0,0,0,0.1);
@@ -170,8 +149,8 @@ th{
 }
 textarea{
     flex: 1;
-    padding: 5px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
     overflow-y: auto;
