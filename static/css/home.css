@@ -14,12 +14,12 @@ p{
     height: 100%;
 }
 .transbox{
-    margin: 5px;
+    margin: 10px;
     width: 80%;
     background-color: #fff;
     border: 1px solid black;
     opacity: 0.9;
-    margin-left: 120px;
+    margin-left: 140px;
     
 }
 .nav{
@@ -28,6 +28,10 @@ p{
     display: flex;
     justify-content:center;
 }
+.nav li a{
+    transition: background-color .3s;
+}
+
 ul{
     list-style: none;
     padding: 0px;
@@ -63,11 +67,20 @@ ul.pagination{
 }
 ul.pagination li a{
     transition: background-color .3s;
+}
 
+td{
+    padding: 15px;
 }
 th{
-    padding: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(68, 143, 189);
 }
+/* tr:nth-child(odd) {
+    background: #a2ccda;
+} */
+
 .question{
-    width: 200px;
+    width: 250px;
 }
