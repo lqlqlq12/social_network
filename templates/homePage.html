@@ -10,49 +10,62 @@
     </head>
     <body>
     <div>
-        <ul class="nav">
-            <li><a class="active" href="http://127.0.0.1:8000/">首页</a></li>
-            <li><a href="http://127.0.0.1:8000/classification/">聚类</a></li>
-            <li><a href="http://127.0.0.1:8000/sentiment/">情感分析</a></li>
-            <li class="last"><a href="http://127.0.0.1:8000/questionAnswer/">问答</a></li>
-        </ul>
-        <div class="transbox">
-            <table id="moview-result-list-table" border="1" cellspacing="1" cellpadding="1" >
-                <tr>
-                    <th class="question" >问题</th>
-                    <th>答案</th>
-                </tr>
-                {% for data in data_list %}
-                    <tr>
-                        <td>{{data.data_question}}</td>
-                        <td>{{data.data_context}}</td>
-                    </tr>
-                {% endfor %}
-    
-            </table>
+        <ul class="background">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+         </ul>
+    </div>
+    <div class="card">
+        <div class="question">
+            <div class="card3">
+                <a class="tran3" href="http://127.0.0.1:8000/questionAnswer/">
+                    <img class="bot" src="../static/images/bot.jpeg">
+                    Q&A</a>
+            </div>
         </div>
         <div>
-            <ul class="pagination">
-                {% if page_object.has_previous %}
-                    <li>
-                    <a href="?page={{ page_object.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                    </li>
-                {% endif %}
-    
-               {% for pg in page_object.paginator.page_range %}
-                {% if page_object.number == pg %}
-                <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
-                {% else %}
-                <li><a href="?page={{ pg }}">{{ pg }}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% if page_object.has_next %}
-                    <li>
-                        <a href="?page={{ page_object.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-                {% endif %}
-            </ul>
+            <div class="cluster">
+                <div class="card1">
+                    <a class="tran1" href="http://127.0.0.1:8000/classification/">
+                        <img class="k" src="../static/images/16gl-K.png">
+                        Clustering Analysis</a>
+                </div>
+            </div>
+            <div class="emotional">
+                <div class="card2">
+                    <a class="tran2" href="http://127.0.0.1:8000/sentiment/">
+                        <img class="smile" src="../static/images/smile.png">
+                        Emotional Analysis</a>
+                </div>
+            </div>
         </div>
     </div>
-    
   </body>  
 </html>
