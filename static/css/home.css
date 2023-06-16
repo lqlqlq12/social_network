@@ -1,73 +1,11 @@
 body{
     color: #000000;
     background-repeat: no-repeat;
-    padding: 0 0em;
-    margin: 0;
 }
 .header{
     width: 100%;
     height: 100%;
 }
-/* .transbox{
-    margin: 10px;
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid black;
-    opacity: 0.9;
-    margin-left: 140px;
-    
-}
-.nav{
-    margin: 0%;
-    height: 60px;
-    display: flex;
-    justify-content:center;
-}
-.nav li a{
-    transition: background-color .3s;
-}
-
-ul{
-    list-style: none;
-    padding: 0px;
-    overflow: hidden;
-    
-}
-li{
-    padding-top: 5px;
-    float: left;
-    width: 100px;
-    margin-right:50px ;
-
-} */
-/* .active{
-    background-color: #ffffff;
-}
-li a:hover:not(.active){
-    background-color: #272727;
-    color: white;
-}
-ul.pagination{
-    display: flex;
-    justify-content: center;
-
-}
-ul.pagination li a{
-    transition: background-color .3s;
-} */
-
-/* td{
-    padding: 15px;
-}
-th{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: rgb(68, 143, 189);
-}
-
-.question{
-    width: 250px;
-} */
 
 @keyframes animate {
     0%{
@@ -310,53 +248,53 @@ th{
 
 .tran1{
     display: block;
-    padding-top: 80px;
+    padding-top: 10vh;
     text-align: center;
-    width: 600px;
-    height: 220px;
+    width: 40vw;
+    height: 29vh;
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 60px;
+    font-size: 4vw;
     text-decoration: none;
+    margin-right: 10vw;
 }
 
 .tran2{
     display: block;
-    padding-top: 80px;
+    padding-top: 10vh;
     text-align: center;
-    width: 600px;
-    height: 220px;
+    width: 40vw;
+    height: 29vh;
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 60px;
+    font-size: 4vw;
     text-decoration: none;
 }
 
 .tran3{
     display: block;
-    padding-top: 250px;
+    padding-top: 32vh;
     text-align: center;
-    width: 600px;
-    height: 350px;
+    width: 40vw;
+    height: 54vh;
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 90px;
+    font-size: 6vw;
     text-decoration: none;
 }
 
 .card{
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 4vw;
     display: flex;
 }
 
 .cluster{
-    margin: 60px;
-    width: 600px;
-    height: 300px;
+    margin: 8vh;
+    width: 40vw;
+    height: 38vh;
     background-image: linear-gradient(163deg, #00ff7713 0%, #3700ff30 100%);
     border-radius: 20px;
     transition: all .3s;
@@ -364,8 +302,8 @@ th{
 }
    
 .card1 {
-    width: 600px;
-    height: 300px;
+    width: 40vw;
+    height: 38vh;
     background-color: #cecefe1a;
     border-radius:20px;
     transition: all .2s;
@@ -382,14 +320,14 @@ th{
 }
 
 .k{
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 4vw;
 }
 
 .emotional {
-    margin: 60px;
-    width: 600px;
-    height: 300px;
+    margin: 8vh;
+    width: 40vw;
+    height: 38vh;
     background-image: linear-gradient(163deg, #00ff7713 0%, #3700ff30 100%);
     border-radius: 20px;
     transition: all .3s;
@@ -397,8 +335,8 @@ th{
 }
    
 .card2 {
-    width: 600px;
-    height: 300px;
+    width: 40vw;
+    height: 38vh;
     background-color: #cecefe1a;
     border-radius:20px;
     transition: all .2s;
@@ -415,23 +353,23 @@ th{
 }
 
 .smile{
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 4vw;
 }
 
 .question {
-    margin-top: 60px;
-    margin-left: 40px;
-    width: 600px;
-    height: 660px;
+    margin-top: 8vh;
+    margin-left: 2vw;
+    width: 40vw;
+    height: 85vh;
     background-image: linear-gradient(163deg, #00ff7713 0%, #3700ff30 100%);
     border-radius: 20px;
     transition: all .3s;
 }
    
 .card3 {
-    width: 600px;
-    height: 660px;
+    width: 40vw;
+    height: 85vh;
     background-color: #cecefeb2;
     border-radius:20px;
     transition: all .2s;
@@ -447,6 +385,6 @@ th{
 }
 
 .bot{
-    width: 70px;
-    height: 70px;
+    width: 5vw;
+    height: 5vw;
 }

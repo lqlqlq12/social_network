@@ -1,22 +1,21 @@
 from django.contrib import admin
-from employment.models import Test, QA, QAIndex
+from employment.models import QA, QAIndex
+from employment.models import Data
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
 # Register your models here.
-class TestResource(resources.ModelResource):
+class DataResource(resources.ModelResource):
 
     class Meta:
-        model = Test
-        export_order = ('data_question','data_context')
+        model = Data
+        export_order = ('date','url','content','voteup','retweet','comment','specialty','origin')
 
-@admin.register(Test)
-class TestAdmin(ImportExportModelAdmin):
-    list_display = ('data_question','data_context')
-    search_fields = ('data_question',)  
-    resource_class = TestResource
-
-
+@admin.register(Data)
+class DataAdmin(ImportExportModelAdmin):
+    list_display = ('date','url','content','voteup','retweet','comment','specialty','origin')
+    search_fields = ('date','context','specialty','origin')
+    resource_class = DataResource
 
 class QuestionAnswerResource(resources.ModelResource):
     class Meta:
