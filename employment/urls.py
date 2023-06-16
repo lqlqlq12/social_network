@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^classification', views.classification, name='classification'),
     url(r'^questionAnswer', views.questionAnswer, name='questionAnswer'),
     url(r'^sentiment', views.sentiment, name='sentiment'),
+    url(r'^func', views.buildIndex),
 ]
