@@ -11,8 +11,8 @@ p{
     height: 100%;
 }
 .nav{
-    margin: 10px;
-    height: 60px;
+    margin: 1vh;
+    height: 7vh;
     display: flex;
     justify-content:center;
 }
@@ -27,11 +27,9 @@ p{
     color: #FFFFFF;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: 18px;
     justify-content: center;
     line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
+    width: 9vw;
     padding: 3px;
     text-decoration: none;
     user-select: none;
@@ -40,9 +38,9 @@ p{
     white-space: nowrap;
     cursor: pointer;
     transition: all .3s;
-    margin-top: 10px;
-    margin-right: 50px;
-    line-height: 37px;
+    margin-top: 1vh;
+    margin-right: 4vw;
+    line-height: 4vh;
 }
 .href:active,
 .href:hover {
@@ -53,7 +51,6 @@ p{
     text-decoration: none;
     background-color: rgba(128, 160, 255, 0.676);
     color: #FFFFFF;
-    padding-top: 5px;
     text-align: center;
     border-radius: 6px;
     width: 100%;
@@ -61,8 +58,8 @@ p{
     transition: 300ms;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 20px;
-
+    font-size: 2.5vh;
+    line-height: 5vh;
 }
 .href:hover a{
     background: none;
@@ -72,18 +69,17 @@ p{
 }
 
 .container{
-    width: calc(50% - 40px) ;
-    padding-top: 50px;
+    width: 45vw ;
+    padding-top: 8vh;
     margin: auto;
 }
 .content{
-    width: calc(100% - 40px);
-    height: 380px;
-    padding: 20px;
-    overflow-y: scroll;
+    height: 47vh;
+    padding: 3vh;
     flex: 1;
-    background-color: rgb(170, 190, 255);
+    background-color: rgba(132, 119, 192, 0.413);
     border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     box-shadow:
     12.9px 8.5px 2.6px rgba(0, 0, 0, 0.017),
     24.6px 16.3px 5.5px rgba(0, 0, 0, 0.024),
@@ -100,7 +96,7 @@ p{
     background:rgba(0,0,0,0.1);
 }
 .bubble{
-    max-width: 400px;
+    max-width: 24vw;
     padding: 10px;
     border-radius: 5px;
     position: relative;
@@ -109,7 +105,7 @@ p{
     word-break:normal; 
 }
 .item-left .bubble{
-    margin-left: 15px;
+    margin-left: 1vw;
     background-color: #fff;
 }
 .item-left .bubble:before{
@@ -121,10 +117,10 @@ p{
     border-top: 10px solid transparent;
     border-right: 10px solid #fff;
     border-bottom: 10px solid transparent;
-    left: -20px;
+    left: -1vw;
 }
 .item-right .bubble{
-    margin-right: 15px;
+    margin-right: 1vw;
     background-color: #9eea6a;
 }
 .item-right .bubble:before{
@@ -136,10 +132,10 @@ p{
     border-top: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    right: -20px;
+    right: -1vw;
 }
 .item{
-    margin-top: 15px;
+    margin-top: 1vw;
     display: flex;
     width: 100%;
 }
@@ -163,15 +159,18 @@ p{
 }
 .input-area{
     border-top:0.5px solid #e0e0e0;
-    height: 150px;
+    height: 20vh;
+    width: 45vw;
     display: flex;
     flex-flow: column;
     background-color: #fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 textarea{
     flex: 1;
-    padding: 15px;
-    font-size: 20px;
+    padding: 1vw;
+    font-size: 3vh;
     border: none;
     cursor: pointer;
     overflow-y: auto;
@@ -181,34 +180,48 @@ textarea{
 }
 .button-area{
     display: flex;
-    height: 30px;
-    margin-right: 10px;
-    line-height: 40px;
-    padding: 5px;
+    height: 4vh;
+    margin-right: 1vw;
+    line-height: 6vh;
+    padding: 1vh;
     justify-content: flex-end;
 }
 
 .button-area button{
-    width: 80px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    float: right;
-    cursor: pointer;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    font-size: 1vw;
+    font-family: inherit;
+    letter-spacing: .25px;
+    line-height: normal;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    transition: background box-shadow 280ms ease;
 }
 .button-area button:hover{
-    background-color: #adadad;
+    background: #F6F9FE;
+    color: #174ea6;
 }
+.button-area button:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
 .avatar-bot{
     background-image: url("../images/bot.jpeg");
-    width: 40px;
-    background-size: 40px;
+    width: 3vw;
+    background-size: 5vh;
     background-repeat: no-repeat;
 }
 .avatar-user{
     background-image: url("../images/girl.jpeg");
-    width: 40px;
-    background-size: 40px;
+    width: 3vw;
+    background-size: 5vh;
     background-repeat: no-repeat;
 }
 

@@ -13,8 +13,8 @@ p{
     height: 100%;
 }
 .nav{
-    margin: 10px;
-    height: 60px;
+    margin: 1vh;
+    height: 7vh;
     display: flex;
     justify-content:center;
 }
@@ -29,11 +29,9 @@ p{
     color: #FFFFFF;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: 18px;
     justify-content: center;
     line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
+    width: 9vw;
     padding: 3px;
     text-decoration: none;
     user-select: none;
@@ -42,9 +40,9 @@ p{
     white-space: nowrap;
     cursor: pointer;
     transition: all .3s;
-    margin-top: 10px;
-    margin-right: 50px;
-    line-height: 37px;
+    margin-top: 1vh;
+    margin-right: 4vw;
+    line-height: 4vh;
 }
 .href:active,
 .href:hover {
@@ -55,7 +53,6 @@ p{
     text-decoration: none;
     background-color: rgba(128, 160, 255, 0.676);
     color: #FFFFFF;
-    padding-top: 5px;
     text-align: center;
     border-radius: 6px;
     width: 100%;
@@ -63,19 +60,14 @@ p{
     transition: 300ms;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 20px;
-
+    font-size: 2.5vh;
+    line-height: 5vh;
 }
 .href:hover a{
     background: none;
 }
 .href:active{
     transform: scale(0.9);
-}
-
-.active{
-    background-color: rgba(128, 160, 255, 0.221);
-    color: #FFFFFF;
 }
 
 /* 背景css */

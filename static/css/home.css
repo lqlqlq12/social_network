@@ -255,7 +255,7 @@ body{
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 60px;
+    font-size: 4vw;
     text-decoration: none;
     margin-right: 10vw;
 }
@@ -269,20 +269,20 @@ body{
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 60px;
+    font-size: 4vw;
     text-decoration: none;
 }
 
 .tran3{
     display: block;
-    padding-top: 30vh;
+    padding-top: 32vh;
     text-align: center;
     width: 40vw;
     height: 54vh;
     color: #fff;
     text-shadow: 1px 1px 0px rgb(194, 220, 233), 2px 2px 2px rgb(49, 166, 233),
     3px 3px 2px rgb(31, 153, 224), 5px 5px 2px rgb(20, 120, 236);
-    font-size: 90px;
+    font-size: 6vw;
     text-decoration: none;
 }
 
