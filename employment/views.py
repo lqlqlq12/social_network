@@ -7,7 +7,7 @@ import jieba
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
-from django.core.paginator import Paginator,Page,EmptyPage,PageNotAnInteger
+from django.core.paginator import Paginator, Page, EmptyPage, PageNotAnInteger
 
 from django.core.paginator import Paginator, Page, EmptyPage, PageNotAnInteger
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -22,29 +22,33 @@ from transformers import (
 )
 
 # 训练模型,启动项目后就会训练模型
-stopwords = []
-static_path = os.path.join(settings.STATIC_ROOT, 'refs')
-file_path = os.path.join(static_path, 'stopwords.txt')
-for word in open(file_path, encoding='utf-8'):
-    stopwords.append(word)
+try:
 
-qlist = []
-alist = []
-data = QA.objects.all()
-for item in data:
-    qlist.append(item.question)
-    alist.append(item.answer)
-qlist_seg = []
-for word in qlist:
-    word_list = []
-    text = re.sub(r'[^\w]+', '', word.strip())
-    cut_text = jieba.lcut(text, cut_all=False)
-    for cut in cut_text:
-        if cut not in stopwords:
-            word_list.append(cut)
-    qlist_seg.append(word_list)
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform([' '.join(word_list) for word_list in qlist_seg])
+    stopwords = []
+    static_path = os.path.join(settings.STATIC_ROOT, 'refs')
+    file_path = os.path.join(static_path, 'stopwords.txt')
+    for word in open(file_path, encoding='utf-8'):
+        stopwords.append(word)
+
+    qlist = []
+    alist = []
+    data = QA.objects.all()
+    for item in data:
+        qlist.append(item.question)
+        alist.append(item.answer)
+    qlist_seg = []
+    for word in qlist:
+        word_list = []
+        text = re.sub(r'[^\w]+', '', word.strip())
+        cut_text = jieba.lcut(text, cut_all=False)
+        for cut in cut_text:
+            if cut not in stopwords:
+                word_list.append(cut)
+        qlist_seg.append(word_list)
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform([' '.join(word_list) for word_list in qlist_seg])
+except Exception:
+    print('训练失败')
 
 
 # Create your views here.
@@ -132,4 +136,3 @@ def buildIndex(request):
         except ObjectDoesNotExist:
             new_list = QAIndex(keyword=term, docList=json.dumps(temp))
             new_list.save()
-

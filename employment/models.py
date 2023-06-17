@@ -13,13 +13,13 @@ class Data(models.Model):
     def __str__(self):
         return self.content
 
-
+#问答表
 class QA(models.Model):
     question = models.TextField()
     answer = models.TextField()
-
+    #category=models.TextField()
     def __str__(self):
-        return str(self.question) + str(self.answer)
+        return self.answer
 
 #索引表
 class QAIndex(models.Model):
@@ -28,4 +28,3 @@ class QAIndex(models.Model):
 
     def __str__(self):
         return self.keyword
-        return self.content
