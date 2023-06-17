@@ -1,29 +1,22 @@
 import csv
 import json
 import os
+import random
 import re
 from queue import PriorityQueue
+import jieba.analyse
 import jieba
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.core.paginator import Paginator, Page, EmptyPage, PageNotAnInteger
-
-from django.core.paginator import Paginator, Page, EmptyPage, PageNotAnInteger
+from django.views.decorators.csrf import csrf_exempt
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import jieba.posseg as pseg
 from employment.models import QA, QAIndex
-from transformers import (
-    AutoTokenizer,
-    AutoModelForQuestionAnswering,
-    Trainer,
-    TrainingArguments,
-    squad_convert_examples_to_features, pipeline
-)
 
 # 训练模型,启动项目后就会训练模型
 try:
-
     stopwords = []
     static_path = os.path.join(settings.STATIC_ROOT, 'refs')
     file_path = os.path.join(static_path, 'stopwords.txt')
@@ -57,26 +50,52 @@ def homePage(request):
 
 
 # 定义回答页面
+@csrf_exempt
 def questionAnswer(request):
-    question = request.GET['text']
-    q_word_list = []
-    q_text = re.sub(r'[^\w]+', '', question.strip())
-    q_cut_text = jieba.lcut(q_text, cut_all=False)
-    for cut in q_cut_text:
-        if cut not in stopwords:
-            q_word_list.append(cut)
-    q_vector = vectorizer.transform([' '.join(q_word_list)])
-    sim = (X * q_vector.T).toarray()
-    pq = PriorityQueue()
-    for cur in range(sim.shape[0]):
-        pq.put((sim[cur][0], cur))
-        if len(pq.queue) > 5:
-            pq.get()
-    pq_rank = sorted(pq.queue, key=lambda x: x[0], reverse=True)
-    # print([item[0] for item in pq_rank][0])
-    answer = [alist[item[1]] for item in pq_rank][0]
-    print(answer)
-    return render(request, 'questionAnswer.html')
+    if request.method == 'GET':
+        return render(request, 'questionAnswer.html')
+    elif request.method == 'POST':
+        res = {
+            'status': 404,
+            'text': 'Unknown request!'
+        }
+        try:
+            question = request.POST['text']
+            print(question)
+            q_word_list = []
+            q_text = re.sub(r'[^\w]+', '', question.strip())
+            q_cut_text = jieba.lcut(q_text, cut_all=False)
+            for cut in q_cut_text:
+                if cut not in stopwords:
+                    q_word_list.append(cut)
+            q_vector = vectorizer.transform([' '.join(q_word_list)])
+            sim = (X * q_vector.T).toarray()
+            pq = PriorityQueue()
+            for cur in range(sim.shape[0]):
+                pq.put((sim[cur][0], cur))
+                if len(pq.queue) > 100:
+                    pq.get()
+            pq_rank = sorted(pq.queue, key=lambda x: x[0], reverse=True)
+            # print([item[0] for item in pq_rank][0])
+            answers = [alist[item[1]] for item in pq_rank]
+            item = random.randint(0, 30)%len(answers)
+            answer=answers[item]
+            if answer:
+                res = {
+                    'status': 200,
+                    'answer': answer,
+                }
+            else:
+                res = {
+                    'status': 201,
+                    'answer': 'No answer!'
+                }
+        except ObjectDoesNotExist:
+            res = {
+                'status': 201,
+                'answer': 'No anser!'
+            }
+        return HttpResponse(json.dumps(res), content_type='application/json')
 
 
 # 定义分类页面
@@ -90,7 +109,7 @@ def sentiment(request):
 
 # 将csv数据写入数据库
 def writeToDB(request):
-    file_path = 'D:\\courses\\juniorsec\\social_network\\lab\\final\\code\\Policy\\qa.csv'
+    file_path = r'D:\courses\juniorsec\social_network\lab\final\code\qa.csv'
     with open(file_path, 'r', encoding='utf_8_sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
